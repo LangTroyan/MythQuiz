@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        applicationDocumentsDirectory()
         return true
     }
 
@@ -86,6 +87,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    func applicationDocumentsDirectory() {
+        if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+            print(url.absoluteString)
         }
     }
 

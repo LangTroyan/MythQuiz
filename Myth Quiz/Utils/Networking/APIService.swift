@@ -16,7 +16,7 @@ enum Result<T>{
 class APIService: NSObject {
     
     //MARK: Properties
-    let baseUrl: String = "https://opentdb.com/api.php?amount=4&category=20&type=multiple"
+    let baseUrl: String = "https://opentdb.com/api.php?amount=20&category=20&type=multiple"
     
     //MARK: Method
     func getData(completition: @escaping (Result<[[String : AnyObject]]>) -> Void){

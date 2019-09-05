@@ -14,11 +14,13 @@ class SetupViewController: UIViewController {
     
     @IBOutlet weak var playerField1: UITextField!
     @IBOutlet weak var playerField2: UITextField!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchOutsideOfKeyboard)))
     }
     
     @IBAction func startAction(_ sender: Any) {
@@ -48,32 +50,21 @@ class SetupViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                switch(UIDevice.current.orientation){
-                case .landscapeLeft, .landscapeRight:
-                    self.view.frame.origin.y -= keyboardSize.height * 2
-                default:
-                    self.view.frame.origin.y -= keyboardSize.height
-                }
-            }
+        self.topConstraint.constant = 10
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        self.topConstraint.constant = 180
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func touchOutsideOfKeyboard(sender: UITapGestureRecognizer){
+        view.endEditing(true)
     }
-    */
 
 }

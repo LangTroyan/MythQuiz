@@ -248,7 +248,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up the players' names" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJV-mm-M1V">
-                                        <rect key="frame" x="20" y="182" width="374" height="25"/>
+                                        <rect key="frame" x="20" y="180" width="374" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -256,26 +256,26 @@
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asY-CW-DaH">
-                                        <rect key="frame" x="60" y="287" width="294" height="30"/>
+                                        <rect key="frame" x="60" y="285" width="294" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vs-icon" translatesAutoresizingMaskIntoConstraints="NO" id="TTn-Lu-WbU">
-                                        <rect key="frame" x="127" y="327" width="160" height="120"/>
+                                        <rect key="frame" x="127" y="325" width="160" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="6Wl-Sr-uEG"/>
                                             <constraint firstAttribute="height" constant="120" id="oV2-Df-HtU"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLA-ta-CpV">
-                                        <rect key="frame" x="60" y="457" width="294" height="30"/>
+                                        <rect key="frame" x="60" y="455" width="294" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-cw-aNZ">
-                                        <rect key="frame" x="179" y="527" width="56" height="41"/>
+                                        <rect key="frame" x="179" y="525" width="56" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Start">
@@ -292,13 +292,13 @@
                                     <constraint firstItem="asY-CW-DaH" firstAttribute="leading" secondItem="OjM-Uc-0Lk" secondAttribute="leading" constant="60" id="DGW-kK-pOm"/>
                                     <constraint firstItem="cLA-ta-CpV" firstAttribute="top" secondItem="TTn-Lu-WbU" secondAttribute="bottom" constant="10" id="ESY-Nm-D8W"/>
                                     <constraint firstAttribute="trailing" secondItem="cJV-mm-M1V" secondAttribute="trailing" constant="20" id="Jhd-ag-fIh"/>
-                                    <constraint firstItem="TTn-Lu-WbU" firstAttribute="centerY" secondItem="OjM-Uc-0Lk" secondAttribute="centerY" id="NRi-03-OWL"/>
                                     <constraint firstItem="TTn-Lu-WbU" firstAttribute="centerX" secondItem="OjM-Uc-0Lk" secondAttribute="centerX" id="OPN-Bj-kwo"/>
                                     <constraint firstItem="Pbg-cw-aNZ" firstAttribute="top" secondItem="cLA-ta-CpV" secondAttribute="bottom" constant="40" id="Occ-mg-p6z"/>
                                     <constraint firstItem="cLA-ta-CpV" firstAttribute="leading" secondItem="OjM-Uc-0Lk" secondAttribute="leading" constant="60" id="R2O-VH-xfN"/>
                                     <constraint firstAttribute="trailing" secondItem="cLA-ta-CpV" secondAttribute="trailing" constant="60" id="a6Y-N9-aED"/>
                                     <constraint firstItem="Pbg-cw-aNZ" firstAttribute="centerX" secondItem="OjM-Uc-0Lk" secondAttribute="centerX" id="d7M-YD-2k4"/>
                                     <constraint firstItem="TTn-Lu-WbU" firstAttribute="top" secondItem="asY-CW-DaH" secondAttribute="bottom" constant="10" id="e7Y-Fd-83T"/>
+                                    <constraint firstItem="cJV-mm-M1V" firstAttribute="top" secondItem="OjM-Uc-0Lk" secondAttribute="top" constant="180" id="iwL-kv-LpN"/>
                                     <constraint firstAttribute="trailing" secondItem="asY-CW-DaH" secondAttribute="trailing" constant="60" id="lEb-ZM-IGk"/>
                                     <constraint firstItem="asY-CW-DaH" firstAttribute="top" secondItem="cJV-mm-M1V" secondAttribute="bottom" constant="80" id="nGU-dv-U24"/>
                                 </constraints>
@@ -320,6 +320,7 @@
                     <connections>
                         <outlet property="playerField1" destination="asY-CW-DaH" id="fOa-BR-Org"/>
                         <outlet property="playerField2" destination="cLA-ta-CpV" id="raA-pl-4lk"/>
+                        <outlet property="topConstraint" destination="iwL-kv-LpN" id="MXr-Qg-tc8"/>
                         <segue destination="nMx-BN-4to" kind="show" identifier="GameSegue" id="dY6-QR-OJ9"/>
                     </connections>
                 </viewController>

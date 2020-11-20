@@ -1,5 +1,5 @@
 # MythQuiz
-Test for SlashMobility
+Test your knowledge in mythological culture from all around the world with this little app
 
 No external libraries were used for this demo app
 
